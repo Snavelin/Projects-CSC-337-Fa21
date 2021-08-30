@@ -1,3 +1,8 @@
+img {
+    float: right;
+    margin-left: 2em;
+}
+
 td {
     padding-left: 25px
 }
