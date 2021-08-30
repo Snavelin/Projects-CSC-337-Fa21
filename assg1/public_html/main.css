@@ -1,0 +1,42 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+p {
+    font-size: 18pt;
+    text-align: justify;
+}
+
+.contentContainer {
+    margin: auto 25%;
+}
+
+img {
+    width: 600px;
+    max-width: 100%;
+}
+
+.imageLinkContainer {
+    text-align: center;
+}
+
+.listContainer {
+    display: grid;
+    justify-content: center;
+}
+
+
