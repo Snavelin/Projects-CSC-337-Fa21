@@ -1,3 +1,7 @@
+/*
+Author: Dylan Snavely
+Purpose: Sets the width of the image to that of the content body in willis-tower.html.
+*/
 img {
     width: 100%;
     margin-bottom: 1em;

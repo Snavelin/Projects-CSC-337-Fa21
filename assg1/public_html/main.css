@@ -1,3 +1,8 @@
+/*
+Author: Dylan Snavely
+Purpose: Common stylesheet that is imported by all html documents on this site.
+         It styles headers, paragraphs, images, and centers content for each page.
+*/
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

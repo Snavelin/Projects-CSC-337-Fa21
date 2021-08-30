@@ -1,3 +1,8 @@
+/*
+Author: Dylan Snavely
+Purpose: Floats images to the right of paragraphs in sears-tower.html.
+         Provides padding for the list at the bottom of the page for better readability.
+*/
 img {
     float: right;
     margin-left: 2em;

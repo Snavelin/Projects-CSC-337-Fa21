@@ -1,3 +1,7 @@
+/*
+Author: Dylan Snavely
+Purpose: Centers headers and images for index.html
+*/
 img {
     display: block;
     margin: 0 auto;
