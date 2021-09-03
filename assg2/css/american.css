@@ -1,0 +1,39 @@
+/*
+Author: Dylan Snavely
+Purpose: Sets the background colors, borders, and fonts specific to american.html.
+*/
+body {
+    background-color: silver;
+    font-family: "OCR A Extended", sans-serif;
+}
+
+.titleContainer {
+    background-color: navy;
+    color: white;
+}
+
+nav {
+    background-color: red;
+}
+
+a {
+    color: white;
+}
+
+img {
+    border: 3px dashed lime;
+}
+
+th, td {
+    border: 3px dashed magenta;
+}
+
+th {
+    background-color: darkred;
+    color: white;
+}
+
+p {
+    width: 600px;
+    margin: 1em auto;
+}

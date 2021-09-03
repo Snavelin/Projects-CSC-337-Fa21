@@ -1,0 +1,45 @@
+/*
+Author: Dylan Snavely
+Purpose: Sets the background colors, borders, and fonts specific to index.html.
+*/
+body {
+    background-color: navy;
+    color: white;
+}
+
+.titleContainer {
+    background-color: goldenrod;
+}
+
+nav {
+    background-color: darkred;
+}
+
+a {
+    color: white;
+}
+
+.titleContainer, a {
+    font-family: "Magneto", sans-serif;
+}
+
+img {
+    border: 5px solid orange;
+}
+
+p {
+    font-family: "Agency FB", sans-serif;
+}
+
+table {
+    font-family: "Agency FB", sans-serif;
+}
+
+th, td {
+    border: 3px dotted orange;
+}
+
+th {
+    background-color: slategray;
+    color: red;
+}
