@@ -4,7 +4,6 @@ Purpose: Sets the background colors, borders, and fonts specific to american.htm
 */
 body {
     background-color: silver;
-    font-family: "OCR A Extended", sans-serif;
 }
 
 .titleContainer {
@@ -20,8 +19,16 @@ a {
     color: white;
 }
 
+.titleContainer, a {
+    font-family: "Harlow Solid Italic", sans-serif;
+}
+
 img {
     border: 3px dashed lime;
+}
+
+table {
+    font-family: "OCR A Extended", sans-serif;
 }
 
 th, td {
@@ -36,4 +43,5 @@ th {
 p {
     width: 600px;
     margin: 1em auto;
+    font-family: "OCR A Extended", sans-serif;
 }
