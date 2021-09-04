@@ -18,6 +18,10 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    text-align: center;
+}
+
 .contentContainer {
     display: flex;
     flex-direction: column;
