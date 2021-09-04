@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form action="https://benjdd.com/sp" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="firstNameField">First Name*:</label>
+                </td>
+                <td>
+                    <input type="text" id="firstNameField" name="firstName" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lastNameField">Last Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="lastNameField" name="lastName" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="primaryEmailField">Primary Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="primaryEmailField" name="primaryEmail" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="passwordField">Password:</label>
+                </td>
+                <td>
+                    <input type="password" id="passwordField" name="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="recoveryEmailField">Recovery Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="recoveryEmailField" name="recoveryEmail">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phoneNumberField">Phone Number:</label>
+                </td>
+                <td>
+                    <input type="tel" id="phoneNumberField" name="phoneNumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="weightField">Weight in lbs:</label>
+                </td>
+                <td>
+                    <input type="number" id="weightField" name="weight">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="bioField">Bio:</label>
+                </td>
+                <td>
+                    <textarea id="bioField" name="bio">Tell us about yourself!</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="birthdayField">Birthday:</label>
+                </td>
+                <td>
+                    <input type="date" id="birthdayField" name="birthday">
+                </td>
+            </tr>
+        </table>
+        <div>
+            <p>Sign up for newsletter?</p>
+            <label for="newsletterRadioYes">Yes</label>
+            <input type="radio" id="newsletterRadioYes" name="newsletter" value="yes" required>
+            <label for="newsletterRadioNo">No</label>
+            <input type="radio" id="newsletterRadioNo" name="newsletter" value="no" required>
+        </div>
+        <div>
+            <label for="satisfactionField">Satisfaction level (1-10):</label>
+            <input type="range" id="satisfactionField" name="satisfaction" min="1" max="10" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
