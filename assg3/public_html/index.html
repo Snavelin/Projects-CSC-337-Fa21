@@ -13,7 +13,7 @@
                     <label for="firstNameField">First Name*:</label>
                 </td>
                 <td>
-                    <input type="text" id="firstNameField" name="firstName" required>
+                    <input type="text" id="firstNameField" name="firstName" pattern="[A-Z][A-Za-z]*" required>
                 </td>
             </tr>
             <tr>
@@ -21,7 +21,7 @@
                     <label for="lastNameField">Last Name:</label>
                 </td>
                 <td>
-                    <input type="text" id="lastNameField" name="lastName" required>
+                    <input type="text" id="lastNameField" name="lastName" pattern="[A-Z][A-Za-z]*" required>
                 </td>
             </tr>
             <tr>
@@ -37,7 +37,7 @@
                     <label for="passwordField">Password:</label>
                 </td>
                 <td>
-                    <input type="password" id="passwordField" name="password" required>
+                    <input type="password" id="passwordField" name="password" pattern=".{8,}" required>
                 </td>
             </tr>
             <tr>
@@ -53,7 +53,7 @@
                     <label for="phoneNumberField">Phone Number:</label>
                 </td>
                 <td>
-                    <input type="tel" id="phoneNumberField" name="phoneNumber">
+                    <input type="tel" id="phoneNumberField" name="phoneNumber" pattern="\d{3}-\d{4}">
                 </td>
             </tr>
             <tr>
