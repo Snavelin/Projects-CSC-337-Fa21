@@ -14,7 +14,7 @@
         <table>
             <tr>
                 <td>
-                    <label for="firstNameField">First Name*:</label>
+                    <label title="required" for="firstNameField">First Name<span class="requiredAsterisk">*</span>:</label>
                 </td>
                 <td>
                     <input type="text" id="firstNameField" name="firstName" pattern="[A-Z][A-Za-z]*" required>
@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="lastNameField">Last Name:</label>
+                    <label title="required" for="lastNameField">Last Name<span class="requiredAsterisk">*</span>:</label>
                 </td>
                 <td>
                     <input type="text" id="lastNameField" name="lastName" pattern="[A-Z][A-Za-z]*" required>
@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="primaryEmailField">Primary Email:</label>
+                    <label title="required" for="primaryEmailField">Primary Email<span class="requiredAsterisk">*</span>:</label>
                 </td>
                 <td>
                     <input type="email" id="primaryEmailField" name="primaryEmail" required>
@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="passwordField">Password:</label>
+                    <label title="required" for="passwordField">Password<span class="requiredAsterisk">*</span>:</label>
                 </td>
                 <td>
                     <input type="password" id="passwordField" name="password" pattern=".{8,}" required>
@@ -86,7 +86,7 @@
             </tr>
             <tr>
                 <td>
-                    <p>Sign up for newsletter?</p>
+                    <p title="required" class="radioLabel">Sign up for newsletter?<span class="requiredAsterisk">*</span></p>
                     <label for="newsletterRadioYes">Yes</label>
                     <input type="radio" id="newsletterRadioYes" name="newsletter" value="yes" required>
                     <label for="newsletterRadioNo">No</label>
@@ -95,7 +95,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="satisfactionField">Satisfaction level (1-10):</label>
+                    <label title="required" for="satisfactionField">Satisfaction level (1-10)<span class="requiredAsterisk">*</span>:</label>
                 </td>
                 <td>
                     <input type="range" id="satisfactionField" name="satisfaction" min="1" max="10" required>
