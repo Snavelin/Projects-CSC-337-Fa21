@@ -1,0 +1,66 @@
+/*
+Author: Dylan Snavely
+Purpose: Stylesheet for the account registration page for the website 'Snavelin's Coding Club'.
+         It centers content on the page, colors backgrounds, and styles fonts.
+*/
+* {
+    box-sizing: border-box;
+    font-size: 18pt;
+}
+
+img {
+    display: block;
+    margin: 1em auto;
+}
+
+body {
+    margin: 0;
+    background-color: ghostwhite;
+    border: 10px solid cornflowerblue;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+h1 {
+    font-size: 30pt;
+    font-family: Magneto, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+td {
+    padding-right: 20px;
+    padding-bottom: 10px;
+    vertical-align: bottom;
+}
+
+label, button, .radioLabel {
+    font-family: Magneto, sans-serif;
+}
+
+input, textarea {
+    font-family: Consolas, sans-serif;
+    color: darkred;
+    border: 2px solid darkred;
+}
+
+textarea {
+    height: 4em;
+}
+
+p {
+    margin: 0;
+}
+
+.requiredAsterisk {
+    color: red;
+}
