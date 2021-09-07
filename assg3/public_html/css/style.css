@@ -11,6 +11,7 @@ Purpose: Stylesheet for the account registration page for the website 'Snavelin'
 img {
     display: block;
     margin: 1em auto;
+    width: 500px;
 }
 
 body {
