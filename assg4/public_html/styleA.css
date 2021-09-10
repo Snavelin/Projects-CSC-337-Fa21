@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    background-color: lightskyblue;
 }
 
 /* Header */
@@ -38,4 +39,16 @@ h1 {
     display: block;
     text-align: right;
     margin: 3em 3em 0 0;
+}
+
+/* Main content section */
+
+#content {
+    margin-left: 30%;
+    padding-top: 15%;
+    text-align: center;
+}
+
+.productImg {
+    width: 200px;
 }
