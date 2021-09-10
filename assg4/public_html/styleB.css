@@ -2,3 +2,25 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+}
+
+/* Header */
+
+#header {
+    position: fixed;
+    margin-left: 33%;
+    width: 33%;
+    height: 33%;
+    background-color: mediumblue;
+    color: yellow;
+}
+
+#pricecoLogo {
+    width: 200px;
+}
+
+h1 {
+    float: right;
+}
