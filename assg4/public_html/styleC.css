@@ -24,3 +24,12 @@ body {
     background-color: dodgerblue;
 }
 
+/* Main content section */
+
+#content {
+    text-align: center;
+}
+
+.productImg {
+    width: 200px;
+}
