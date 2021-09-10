@@ -12,6 +12,7 @@ body {
 #header {
     width: 500px;
     height: 500px;
+    float: left;
     background-color: mediumblue;
     color: yellow;
 }
@@ -19,9 +20,7 @@ body {
 #navigation {
     width: 500px;
     height: 500px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: right;
     background-color: dodgerblue;
 }
 
