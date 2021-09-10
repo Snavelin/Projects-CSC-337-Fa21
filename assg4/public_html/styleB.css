@@ -71,3 +71,23 @@ h1 {
     top: 0;
     margin-left: 66%;
 }
+
+/* Style buttons */
+
+.styleButton {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 1em 2em;
+    opacity: 70%;
+    background-color: dimgray;
+    color: white;
+}
+
+#styleB {
+    margin-left: 8em;
+}
+
+#styleC {
+    margin-left: 16em;
+}
