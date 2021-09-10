@@ -14,15 +14,30 @@ body {
     width: 500px;
     height: 500px;
     float: left;
-    background-color: mediumblue;
+    background-color: royalblue;
     color: yellow;
+    border: 2px solid blue;
+    text-align: center;
 }
+
+#pricecoLogo {
+    width: 200px;
+}
+
+/* Navigation section */
 
 #navigation {
     width: 500px;
     height: 500px;
     float: right;
     background-color: dodgerblue;
+    border: 2px solid blue;
+    text-align: right;
+}
+
+.navButton {
+    display: block;
+    margin: 2em 2em 0 0;
 }
 
 /* Main content section */
