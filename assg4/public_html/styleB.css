@@ -56,6 +56,9 @@ h1 {
 
 #productsColA {
     width: 33%;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
 }
 
 /* Right column */
