@@ -24,3 +24,20 @@ body {
 h1 {
     float: right;
 }
+
+/* Navigation section */
+
+#navigation {
+    position: fixed;
+    margin-left: 33%;
+    top: 33%;
+    width: 33%;
+    height: 100%;
+    background-color: dodgerblue;
+}
+
+.navButton {
+    display: block;
+    text-align: center;
+    margin: 2em 0 0 0;
+}
