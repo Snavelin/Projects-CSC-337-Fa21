@@ -1,4 +1,41 @@
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
+/* Header */
+
+#header {
+    position: fixed;
+    width: 100%;
+    background-color: mediumblue;
+    color: yellow;
+}
+
+#pricecoLogo {
+    width: 15%;
+}
+
+h1 {
+    float: right;
+}
+
+/* Navigation section */
+
+#navigation {
+    width: 30%;
+    position: fixed;
+    margin-top: 15%;
+    height: 100%;
+    background-color: dodgerblue;
+}
+
+.navButton {
+    display: block;
+    text-align: right;
+    margin: 3em 3em 0 0;
+}
