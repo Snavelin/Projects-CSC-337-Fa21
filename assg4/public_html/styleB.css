@@ -41,3 +41,27 @@ h1 {
     text-align: center;
     margin: 2em 0 0 0;
 }
+
+/* Main content */
+
+.productImg {
+    width: 200px;
+}
+
+.productGroup {
+    text-align: center;
+}
+
+/* Left column */
+
+#productsColA {
+    width: 33%;
+}
+
+/* Right column */
+
+#productsColB {
+    position: absolute;
+    top: 0;
+    margin-left: 66%;
+}
