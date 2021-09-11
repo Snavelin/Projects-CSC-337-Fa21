@@ -1,3 +1,11 @@
+/*
+Author: Dylan Snavely
+Purpose: First of three stylesheets for PriceCo website. It positions the header and navigation
+section above and to the left of the page respectively. The main content of the page (where products go)
+takes up the bottom right of the page. Like the other two stylesheets, it positions buttons to change
+the style of the page at the bottom left.
+*/
+
 * {
     box-sizing: border-box;
     font-family: sans-serif;

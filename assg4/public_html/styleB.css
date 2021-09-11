@@ -1,3 +1,11 @@
+/*
+Author: Dylan Snavely
+Purpose: Second of three stylesheets for PriceCo website. It positions the header and navigation
+section in the middle of the page with content on either side in columns. Each of these columns
+scroll independently of the other. Like the other two stylesheets, it positions buttons to change
+the style of the page at the bottom left.
+*/
+
 * {
     box-sizing: border-box;
     font-family: sans-serif;
