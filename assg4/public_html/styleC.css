@@ -18,10 +18,15 @@ body {
     color: yellow;
     border: 2px solid blue;
     text-align: center;
+    font-size: 20px;
 }
 
 #pricecoLogo {
     width: 200px;
+}
+
+h1 {
+    font-size: 70px;
 }
 
 /* Navigation section */
@@ -38,12 +43,14 @@ body {
 .navButton {
     display: block;
     margin: 2em 2em 0 0;
+    font-size: 30px;
 }
 
 /* Main content section */
 
 #content {
     text-align: center;
+    font-size: 25px;
 }
 
 .productImg {
