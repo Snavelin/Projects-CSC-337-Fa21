@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#sidebar {
+    font-family: Bahnschrift, sans-serif;
+    width: 25%;
+    height: 100%;
+    background-color: slategray;
+    color: white;
+}
+
+input, button {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    margin: 0 0 20px;
+    padding: 1em 0 0;
+}
