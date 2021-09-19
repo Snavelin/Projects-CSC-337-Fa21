@@ -9,18 +9,17 @@
     <div id="sidebar">
         <h1>Welcome to the Jumble</h1>
         <label for="textInput"></label>
-        <input id="textInput" type="text">
+        <input id="textInput" type="text" oninput="caesarCipher()">
         <label for="cipherAmount"></label>
-        <input id="cipherAmount" type="range" min="0" max="26">
+        <input id="cipherAmount" type="range" min="0" max="26" oninput="caesarCipher()">
         <button>Update Square</button>
     </div>
     <div id="content">
-        <div class="cipherSection" id="caesarCipherSection">
-            Lorem ipsum sit amet
-        </div>
+        <div class="cipherSection" id="caesarCipherSection"></div>
         <div class="cipherSection" id="squareCipherSection">
             Lorem ipsum sit amet
         </div>
     </div>
 </body>
+<script src="caesar.js"></script>
 </html>
