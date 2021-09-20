@@ -9,17 +9,53 @@
     <div id="sidebar">
         <h1>Welcome to the Jumble</h1>
         <label for="textInput"></label>
-        <input id="textInput" type="text" oninput="caesarCipher()">
+        <input id="textInput" type="text" oninput="caesarCipher(); squareCipher()">
         <label for="cipherAmount"></label>
         <input id="cipherAmount" type="range" min="0" max="26" oninput="caesarCipher()">
         <button>Update Square</button>
+        <table id="squareCipher">
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+                <td>J</td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+                <td>N</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>Q</td>
+                <td>R</td>
+                <td>S</td>
+                <td>T</td>
+            </tr>
+            <tr>
+                <td>U</td>
+                <td>V</td>
+                <td>W</td>
+                <td>X</td>
+                <td>Y</td>
+            </tr>
+        </table>
     </div>
     <div id="content">
         <div class="cipherSection" id="caesarCipherSection"></div>
-        <div class="cipherSection" id="squareCipherSection">
-            Lorem ipsum sit amet
-        </div>
+        <div class="cipherSection" id="squareCipherSection"></div>
     </div>
 </body>
 <script src="caesar.js"></script>
+<script src="square.js"></script>
 </html>
