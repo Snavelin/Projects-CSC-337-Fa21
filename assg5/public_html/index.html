@@ -12,7 +12,7 @@
         <input id="textInput" type="text" oninput="caesarCipher(); squareCipher()">
         <label for="cipherAmount"></label>
         <input id="cipherAmount" type="range" min="0" max="26" oninput="caesarCipher()">
-        <button>Update Square</button>
+        <button onclick="updateSquare(); squareCipher()">Update Square</button>
         <table id="squareCipher">
             <tr>
                 <td>A</td>
