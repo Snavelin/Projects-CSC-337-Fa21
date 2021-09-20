@@ -8,6 +8,7 @@ body {
 
 #sidebar {
     font-family: Bahnschrift, sans-serif;
+    position: absolute;
     width: 25%;
     height: 100%;
     background-color: slategray;
