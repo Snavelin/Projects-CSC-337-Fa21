@@ -27,8 +27,8 @@ function squareCipher() {
     let encryptedText = "";
     for (let char of originalText) {
         char = char.toUpperCase();
-        if (char.toUpperCase() !== char.toLowerCase()) {
-            let charCode = (char.charCodeAt(0) - 65) % 25;
+        if (char.toUpperCase() !== char.toLowerCase() && char !== 'Z') {
+            let charCode = (char.charCodeAt(0) - 65);
             encryptedText += squareLetters[charCode].innerText;
         } else {
             encryptedText += char;
