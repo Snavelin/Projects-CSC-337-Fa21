@@ -20,6 +20,15 @@ function getCipherAmount() {
 }
 
 /*
+* Displays the current shift of the Caesar Cipher.
+*/
+function displayCipherAmount() {
+    let cipherAmt = getCipherAmount();
+    let label = document.getElementById("cipherAmountLabel");
+    label.innerText = cipherAmt.toString();
+}
+
+/*
 * Performs the Caesar Cipher on the contents of the html text input.
 */
 function caesarCipher() {
