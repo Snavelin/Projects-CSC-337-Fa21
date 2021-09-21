@@ -15,8 +15,11 @@ into a text input field.
         <h1>Welcome to the Jumble</h1>
         <label for="textInput"></label>
         <input id="textInput" type="text" oninput="caesarCipher(); squareCipher()">
-        <label for="cipherAmount" id="cipherAmountLabel"></label>
-        <input id="cipherAmount" type="range" min="0" max="26" oninput="displayCipherAmount(); caesarCipher()">
+        <div id="cipherAmountContainer">
+            <label for="cipherAmount" id="cipherAmountLabel"></label>
+            <input id="cipherAmount" type="range" min="0" max="26"
+                   oninput="displayCipherAmount(); caesarCipher()">
+        </div>
         <button onclick="updateSquare(); squareCipher()">Update Square</button>
         <table id="squareCipher">
             <tr>
