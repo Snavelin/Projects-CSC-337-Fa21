@@ -2,14 +2,7 @@ const fs = require('fs');
 const readline = require('readline');
 const http = require('http');
 
-const e2sDict = createDictionaryFromFile('Spanish.txt');
-const e2gDict = createDictionaryFromFile('German.txt');
-const dictionaries = {
-    e2s: e2sDict,
-    s2e: reverseDictionary(e2sDict),
-    e2g: e2gDict,
-    g2e: reverseDictionary(e2gDict),
-}
+const dictionaries = createDatabase();
 
 
 const port = 5000;
@@ -40,6 +33,22 @@ server.listen(port, hostname,
     }
 );
 
+async function createDatabase() {
+    const e2sDict = await createDictionaryFromFile('Spanish.txt');
+    const e2gDict = await createDictionaryFromFile('German.txt');
+    const s2eDict = reverseDictionary(e2sDict);
+    const g2eDict = reverseDictionary(e2gDict);
+    const s2gDict = map(s2eDict, e2gDict);
+    return {
+        e2s: e2sDict,
+        s2e: s2eDict,
+        e2g: e2gDict,
+        g2e: g2eDict,
+        s2g: s2gDict,
+        g2s: reverseDictionary(s2gDict)
+    };
+}
+
 async function createDictionaryFromFile(filename) {
     const file = readline.createInterface({
         input: fs.createReadStream(filename),
@@ -66,10 +75,18 @@ async function createDictionaryFromFile(filename) {
 * Params:
 *       dict -- the dictionary to be reversed
 */
-async function reverseDictionary(dict) {
+function reverseDictionary(dict) {
     let revDict = {};
     for (const dictKey in dict) {
         revDict[dict[dictKey]] = dictKey;
     }
     return revDict;
+}
+
+function map(dict1, dict2) {
+    let result = {};
+    for (const dict1Key in dict1) {
+        result[dict1Key] = dict2[dict1[dict1Key]];
+    }
+    return result;
 }
