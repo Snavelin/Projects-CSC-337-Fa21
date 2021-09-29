@@ -2,36 +2,38 @@ const fs = require('fs');
 const readline = require('readline');
 const http = require('http');
 
-const dictionaries = createDatabase();
+createDatabase().then(function (dictionaries) {
+    const port = 5000;
+    const hostname = 'localhost';
+    const server = http.createServer(
+        function (req, res) {
+            res.statusCode = 200;
 
+            let urlComponents = req.url.split('/').slice(1);
+            console.log(`Requesting ${req.url}`);
+            console.log(urlComponents);
+            // todo: Check if request is to translate, otherwise send 'OK'
+            let resContent = '';
+            if (urlComponents.length < 2 || urlComponents[0] !== 'translate' || !(urlComponents[1] in dictionaries)) {
+                resContent = 'OK';
+            } else {
+                let mode = urlComponents[1];
+                let words = urlComponents[2].split('+');
+            }
+            // todo: Translate words from url
 
-const port = 5000;
-const hostname = 'localhost';
-const server = http.createServer(
-    function (req, res) {
-        res.statusCode = 200;
-
-        let urlComponents = req.url.split('/').slice(1);
-        console.log(`Requesting ${req.url}`);
-        console.log(urlComponents);
-        // todo: Check if request is to translate, otherwise send 'OK'
-        let resContent = '';
-        if (urlComponents[0] !== 'translate') {
-            resContent = 'OK';
-        } else {
-            
+            res.end(resContent);
         }
-        // todo: Translate words from url
+    );
 
-        res.end(resContent);
-    }
-);
+    server.listen(port, hostname,
+        function () {
+            console.log(`Server running at http://${hostname}:${port}/`);
+        }
+    );
+});
 
-server.listen(port, hostname,
-    function () {
-        console.log(`Server running at http://${hostname}:${port}/`);
-    }
-);
+
 
 async function createDatabase() {
     const e2sDict = await createDictionaryFromFile('Spanish.txt');
