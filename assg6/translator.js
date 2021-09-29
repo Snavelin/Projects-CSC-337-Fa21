@@ -19,6 +19,9 @@ createDatabase().then(function (dictionaries) {
             } else {
                 let mode = urlComponents[1];
                 let words = urlComponents[2].split('+');
+                for (const word of words) {
+                    resContent += `${dictionaries[mode][word]} `;
+                }
             }
             // todo: Translate words from url
 
