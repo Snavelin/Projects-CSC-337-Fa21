@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Translator</h1>
+    </header>
+    <div class="contentSection" id="fromLangSection">
+        <label for="fromLang"></label>
+        <select class="langSelect" id="fromLang">
+            <option value="eng">English</option>
+            <option value="spa">Spanish</option>
+            <option value="ger">German</option>
+        </select>
+        <label for="inputText"></label>
+        <textarea id="inputText"></textarea>
+    </div>
+    <div class="contentSection" id="toLangSection">
+        <label for="toLang"></label>
+        <select class="langSelect" id="toLang">
+            <option value="spa">Spanish</option>
+            <option value="ger">German</option>
+            <option value="eng">English</option>
+        </select>
+        <label for="outputText"></label>
+        <textarea id="outputText" readonly></textarea>
+    </div>
+</body>
+</html>
