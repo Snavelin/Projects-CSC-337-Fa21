@@ -9,43 +9,45 @@
 
 const fs = require('fs');
 const readline = require('readline');
-const http = require('http');
+const express = require('express');
+const app = express();
 
 // Create the database, then open a server and process requests
-createDatabase().then(function (dictionaries) {
-    const port = 5000;
-    const hostname = 'localhost';
-    const server = http.createServer(
-        function (req, res) {
-            // This function processes each translation request
-            res.statusCode = 200;
+createDatabase().then(
+    function (dictionaries) {
+        const port = 5000;
+        const hostname = 'localhost';
+        app.listen(port, hostname,
+            function () {
+               console.log(`Server running at http://${hostname}:${port}`);
+            });
 
-            let urlComponents = req.url.split('/').slice(1);
-            console.log(`Requesting ${req.url}`);
-            console.log(urlComponents);
-            let resContent = '';
-            // Check if request is to translate, otherwise send 'OK'
-            if (urlComponents.length < 2 || urlComponents[0] !== 'translate' || !(urlComponents[1] in dictionaries)) {
-                resContent = 'OK';
-            } else {
-                // Translate words from URL
-                let mode = urlComponents[1];
-                let words = urlComponents[2].split('+');
+        app.use(express.static('public_html'));
+
+        app.get('/translate/:mode/:words', function (req, res) {
+            const mode = req.params.mode;
+            if (mode in dictionaries) {
+                const words = req.params.words.split('+');
+                let responseText = '';
                 for (const word of words) {
-                    resContent += `${dictionaries[mode][word]} `;
+                    let translation = dictionaries[mode][word];
+                    if (translation === undefined) {
+                        translation = '?';
+                    }
+                    responseText += translation + ' ';
                 }
+                console.log(responseText);
+                res.end(responseText);
             }
-            // Send translation to the browser
-            res.end(resContent);
-        }
-    );
+        });
 
-    server.listen(port, hostname,
-        function () {
-            console.log(`Server running at http://${hostname}:${port}/`);
-        }
-    );
-});
+        // Serve the landing page
+        app.get('/:something', function (req, res) {
+            res.sendFile('index.html', { root: 'public_html' });
+            res.end();
+        });
+    }
+);
 
 
 /*
