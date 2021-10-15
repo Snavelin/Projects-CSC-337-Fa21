@@ -11,17 +11,17 @@
     </header>
     <div class="contentSection" id="fromLangSection">
         <label for="fromLang"></label>
-        <select class="langSelect" id="fromLang">
+        <select class="langSelect" id="fromLang" oninput="translate()">
             <option value="eng">English</option>
             <option value="spa">Spanish</option>
             <option value="ger">German</option>
         </select>
         <label for="inputText"></label>
-        <textarea id="inputText"></textarea>
+        <textarea id="inputText" oninput="translate()"></textarea>
     </div>
     <div class="contentSection" id="toLangSection">
         <label for="toLang"></label>
-        <select class="langSelect" id="toLang">
+        <select class="langSelect" id="toLang" oninput="translate()">
             <option value="spa">Spanish</option>
             <option value="ger">German</option>
             <option value="eng">English</option>
@@ -29,5 +29,6 @@
         <label for="outputText"></label>
         <textarea id="outputText" readonly></textarea>
     </div>
+<script src="client.js"></script>
 </body>
 </html>
