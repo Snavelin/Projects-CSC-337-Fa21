@@ -1,3 +1,9 @@
+/*
+Author: Dylan Snavely
+Purpose: This is the stylesheet for the translation service. It styles fonts, background-colors,
+and positioning for elements.
+*/
+
 * {
     box-sizing: border-box;
     font-family: Impact, sans-serif;

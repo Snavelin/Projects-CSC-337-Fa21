@@ -4,7 +4,7 @@
 * translations, then opens a server hosted at localhost to receive requests. A request is made
 * through the URL with the search terms at the end.
 * Example:
-*       localhost:5000/translate/e2g/car+airplane+climb+chair
+*       http://localhost:5000/translate/e2g/car+airplane+climb+chair
 */
 
 const fs = require('fs');
@@ -17,18 +17,20 @@ createDatabase().then(
     function (dictionaries) {
         const port = 5000;
         const hostname = 'localhost';
-        app.listen(port, hostname,
-            function () {
-               console.log(`Server running at http://${hostname}:${port}`);
-            });
+        app.listen(port, hostname, function () {
+           console.log(`Server running at http://${hostname}:${port}`);
+        });
 
         app.use(express.static('public_html'));
 
+        // Translation request
         app.get('/translate/:mode/:words', function (req, res) {
             const mode = req.params.mode;
+            // Check if the mode is valid
             if (mode in dictionaries) {
                 const words = req.params.words.split('+');
                 let responseText = '';
+                // Translate words from url
                 for (const word of words) {
                     let translation = dictionaries[mode][word];
                     if (translation === undefined) {
