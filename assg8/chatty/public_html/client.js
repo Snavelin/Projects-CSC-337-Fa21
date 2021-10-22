@@ -5,7 +5,7 @@
 * messages).
 */
 
-const URL_BASE = 'http://localhost:5000';
+const URL_BASE = 'http://137.184.186.78:5000';
 setInterval(fetchMessages, 1000);  // ping the server for messages every second
 
 /*

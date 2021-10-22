@@ -11,11 +11,8 @@ const mongoose = require('mongoose');
 
 app.use(express.static('public_html'));
 
-const port = 5000;
-const hostname = 'localhost';
-
 const db = mongoose.connection;
-const mongoDBURL = `mongodb://${hostname}/chats`;
+const mongoDBURL = `mongodb://localhost/chats`;
 mongoose.connect(mongoDBURL, { useNewUrlParser: true });
 
 db.on('error', function () {
@@ -54,6 +51,8 @@ app.get('/chats', function (req, res) {
     });
 });
 
+const port = 5000;
+const hostname = '137.184.186.78';
 app.listen(port, hostname, function () {
     console.log(`Server running at http://${hostname}:${port}`);
 });
