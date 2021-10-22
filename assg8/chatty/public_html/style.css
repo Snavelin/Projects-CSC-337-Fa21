@@ -1,3 +1,9 @@
+/*
+Author: Dylan Snavely
+Purpose: The stylesheet for the Chatty client. It styles the app controls and the section where
+text messages appear.
+*/
+
 * {
     box-sizing: border-box;
 }

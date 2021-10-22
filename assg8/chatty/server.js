@@ -1,3 +1,10 @@
+/*
+* Author: Dylan Snavely
+* Purpose: The server for the Chatty app. It defines Express routes to handle new text message
+* requests and to fetch all text messages currently on record. Text messages are
+* stored as documents in a database using the mongoDB DMS and mongoose.
+*/
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -27,6 +34,7 @@ const ChatMessage = mongoose.model('ChatMessage', ChatMessageSchema);
 
 // Express routes
 
+// Adds a new message to the database
 app.post('/chats/post/:alias/:message', function (req, res) {
     console.log('received a message');
     const alias = req.params.alias
@@ -35,6 +43,7 @@ app.post('/chats/post/:alias/:message', function (req, res) {
     thisMessage.save();
 });
 
+// Sends all text messages currently on record
 app.get('/chats', function (req, res) {
     const query = ChatMessage.find({});
     query.select('alias message');
