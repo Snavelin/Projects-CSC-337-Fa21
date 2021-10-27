@@ -39,7 +39,39 @@ const User = mongoose.model('User', UserSchema);
 
 // Express routes
 
+app.post('/add/user', function (req, res) {
+   const bodyData = JSON.parse(req.body);
+   // todo: Check if this user already exists
+   const newUser = new User({
+      username: bodyData.username,
+      password: bodyData.password,
+      listings: [],
+      purchases: []
+   });
+   newUser.save();
+   res.end('saved');
+});
 
+app.post('/add/item/:username', function (req, res) {
+   const bodyData = JSON.parse(req.body);
+   const newItem = new Item({
+      title: bodyData.title,
+      description: bodyData.description,
+      image: bodyData.image,
+      price: bodyData.price,
+      stat: bodyData.stat
+   });
+   newItem.save();
+
+   // Add this item to user's listings
+   // todo: Add this item to user's listings
+   const query = User.findOne({username: bodyData.username});
+
+   // query.select('listings');
+   // query.exec(function (error, result) {
+   //    if (error) console.error('Error on finding users');
+   // });
+});
 
 const port = 80;
 const hostname = 'localhost';
