@@ -1,0 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
+.inputElement {
+    margin: 0 0 20px;
+}
