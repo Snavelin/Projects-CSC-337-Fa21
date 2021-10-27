@@ -39,6 +39,32 @@ const User = mongoose.model('User', UserSchema);
 
 // Express routes
 
+app.get('/get/users', function (req, res) {
+   User.find().exec(function (error, result) {
+      res.end(JSON.stringify(result, null, 2));
+   });
+});
+
+app.get('/get/items', function (req, res) {
+   Item.find().exec(function (error, result) {
+      res.end(JSON.stringify(result, null, 2));
+   });
+});
+
+app.get('/get/listings/:username', function (req, res) {
+   const username = req.params.username;
+   User.findOne({username: username}).exec(function (error, result) {
+      res.end(JSON.stringify(result.listings, null, 2));
+   });
+});
+
+app.get('/get/purchases/:username', function (req, res) {
+   const username = req.params.username;
+   User.findOne({username: username}).exec(function (error, result) {
+      res.end(JSON.stringify(result.purchases, null, 2));
+   });
+});
+
 app.post('/add/user', function (req, res) {
    const bodyData = JSON.parse(req.body);
    // todo: Check if this user already exists
