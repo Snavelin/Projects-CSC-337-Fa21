@@ -32,8 +32,8 @@ const Item = mongoose.model('Item', ItemSchema);
 const UserSchema = new Schema({
    username: String,
    password: String,
-   listings: Array,
-   purchases: Array
+   listings: [Schema.Types.ObjectId],
+   purchases: [Schema.Types.ObjectId]
 });
 const User = mongoose.model('User', UserSchema);
 
@@ -85,18 +85,16 @@ app.post('/add/item/:username', function (req, res) {
       description: bodyData.description,
       image: bodyData.image,
       price: bodyData.price,
-      stat: bodyData.stat
+      stat: bodyData.status
    });
    newItem.save();
 
    // Add this item to user's listings
-   // todo: Add this item to user's listings
-   const query = User.findOne({username: bodyData.username});
-
-   // query.select('listings');
-   // query.exec(function (error, result) {
-   //    if (error) console.error('Error on finding users');
-   // });
+   User.findOne({username: bodyData.username}).exec(function (error, result) {
+      if (error) console.error('Error on finding users');
+      result.listings.push(newItem._id);
+      result.save();
+   });
 });
 
 const port = 80;
