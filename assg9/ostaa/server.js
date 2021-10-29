@@ -65,6 +65,20 @@ app.get('/get/purchases/:username', function (req, res) {
    });
 });
 
+app.get('/search/users/:keyword', function (req, res) {
+   const keyword = req.params.keyword;
+   User.find({username: new RegExp(keyword)}).exec(function (error, result) {
+      res.end(JSON.stringify(result, null, 2));
+   });
+});
+
+app.get('/search/items/:keyword', function (req, res) {
+   const keyword = req.params.keyword;
+   Item.find({description: new RegExp(keyword)}).exec(function (error, result) {
+      res.end(JSON.stringify(result, null, 2));
+   });
+});
+
 app.post('/add/user', function (req, res) {
    const bodyData = JSON.parse(req.body);
    // todo: Check if this user already exists
