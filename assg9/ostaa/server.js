@@ -1,3 +1,10 @@
+/*
+* Author: Dylan Snavely
+* Purpose: The server for the Ostaa online store. It defines Express routes to handle registering
+* new users, new items, and querying the store for the users and items that are on record.
+* Users and items are stored as documents in a database using the mongoDB DMS and mongoose.
+*/
+
 const express = require('express');
 const app = express();
 const parser = require('body-parser');
@@ -39,18 +46,21 @@ const User = mongoose.model('User', UserSchema);
 
 // Express routes
 
+// Returns a JSON list of all users in the database
 app.get('/get/users', function (req, res) {
    User.find().exec(function (error, result) {
       res.end(JSON.stringify(result, null, 2));
    });
 });
 
+// Returns a JSON list of all items in the database
 app.get('/get/items', function (req, res) {
    Item.find().exec(function (error, result) {
       res.end(JSON.stringify(result, null, 2));
    });
 });
 
+// Returns a JSON list of all the listings that belong to a given username
 app.get('/get/listings/:username', function (req, res) {
    const username = req.params.username;
    User.findOne({username: username}).exec(function (error, result) {
@@ -58,6 +68,7 @@ app.get('/get/listings/:username', function (req, res) {
    });
 });
 
+// Returns a JSON list of all the purchases that belong to a given username
 app.get('/get/purchases/:username', function (req, res) {
    const username = req.params.username;
    User.findOne({username: username}).exec(function (error, result) {
@@ -65,6 +76,7 @@ app.get('/get/purchases/:username', function (req, res) {
    });
 });
 
+// Returns a JSON list of the users whose username has the given substring
 app.get('/search/users/:keyword', function (req, res) {
    const keyword = req.params.keyword;
    User.find({username: new RegExp(keyword)}).exec(function (error, result) {
@@ -72,6 +84,7 @@ app.get('/search/users/:keyword', function (req, res) {
    });
 });
 
+// Returns a JSON list of the items whose description has the given substring
 app.get('/search/items/:keyword', function (req, res) {
    const keyword = req.params.keyword;
    Item.find({description: new RegExp(keyword)}).exec(function (error, result) {
@@ -79,9 +92,9 @@ app.get('/search/items/:keyword', function (req, res) {
    });
 });
 
+// Adds a new user to the database
 app.post('/add/user', function (req, res) {
    const bodyData = JSON.parse(req.body);
-   // todo: Check if this user already exists
    const newUser = new User({
       username: bodyData.username,
       password: bodyData.password,
@@ -92,6 +105,7 @@ app.post('/add/user', function (req, res) {
    res.end('saved');
 });
 
+// Adds a new item to the database.
 app.post('/add/item/:username', function (req, res) {
    const bodyData = JSON.parse(req.body);
    const newItem = new Item({
@@ -109,6 +123,7 @@ app.post('/add/item/:username', function (req, res) {
       result.listings.push(newItem._id);
       result.save();
    });
+   res.end('saved');
 });
 
 const port = 80;

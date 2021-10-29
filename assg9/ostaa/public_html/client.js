@@ -1,5 +1,16 @@
+/*
+* Author: Dylan Snavely
+* Purpose: This is the code portion of the Ostaa online store client. It defines functions
+* to communicate with the app server (i.e. registering a new user, adding an item to a user's
+* listings).
+*/
+
 const URL_BASE = 'http://localhost'
 
+/*
+* Requests that a new user be added to the database via POST. The user's username and password are
+* fetched from the DOM.
+*/
 function addUser() {
     const username = document.getElementById('usernameUserSection').value;
     const password = document.getElementById('password').value;
@@ -11,6 +22,10 @@ function addUser() {
     request.send(dataToSend);
 }
 
+/*
+* Requests that a new item be added to the database via POST. The item's fields and associated
+* username are fetched from the DOM.
+*/
 function addItem() {
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
