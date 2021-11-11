@@ -1,0 +1,12 @@
+/*
+Author: Dylan Snavely
+Purpose: The stylesheet for the Ostaa client. It provides spacing between the controls.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.inputElement {
+    margin: 0 0 20px;
+}

@@ -1,0 +1,41 @@
+<!--
+Author: Dylan Snavely
+Purpose: The HTML component of the client for the Ostaa online store. It provides controls to
+register new users and add items to users' listings.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ostaa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ostaa</h1>
+    <div id="loginSection">
+        <h1>Add User</h1>
+        <div class="inputElement">
+            <label for="usernameLogin">Username</label>
+            <input type="text" id="usernameLogin">
+        </div>
+        <div class="inputElement">
+            <label for="passwordLogin">Password</label>
+            <input type="password" id="passwordLogin">
+        </div>
+        <button onclick="">Login</button>
+    </div>
+    <div id="createAccountSection">
+        <h1>Create Account</h1>
+        <div class="inputElement">
+            <label for="usernameCreateAccount">Username</label>
+            <input type="text" id="usernameCreateAccount">
+        </div>
+        <div class="inputElement">
+            <label for="passwordCreateAccount">Password</label>
+            <input type="password" id="passwordCreateAccount">
+        </div>
+        <button onclick="">Create Account</button>
+    </div>
+<script src="client.js"></script>
+</body>
+</html>
